@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Receler is a reliable concept erasing method that disables pre-trained diffusion models from generating images related to a target concept while preserving their ability to generate non-target concepts.">
+  <meta property="og:title" content="Receler: Reliable Concept Erasing of Text-to-Image Diffusion Models via Lightweight Erasers"/>
+  <meta property="og:description" content="Receler is a reliable concept erasing method that disables pre-trained diffusion models from generating images related to a target concept while preserving their ability to generate non-target concepts."/>
+  <meta property="og:url" content="https://jasper0314-huang.github.io/receler-concept-erasing/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Receler: Reliable Concept Erasing of Text-to-Image Diffusion Models via Lightweight Erasers">
+  <meta name="twitter:description" content="Receler is a reliable concept erasing method that disables pre-trained diffusion models from generating images related to a target concept while preserving their ability to generate non-target concepts.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Diffusion models, concept erasing, receler">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Receler: Reliable Concept Erasing of Text-to-Image Diffusion Models via Lightweight Erasers</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Receler: Reliable Concept Erasing of Text-to-Image Diffusion Models via Lightweight Erasers</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com.tw/citations?user=s8-yTSwAAAAJ" target="_blank">
+                Chi-Pin Huang</a>
+                <sup>*,1</sup>
+                ,
+              </span>
+
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=8Ap5WE8AAAAJ" target="_blank">
+                Kai-Po Chang</a>
+                <sup>*,1</sup>
+                ,
+              </span>
+
+              <span class="author-block">
+                <a>
+                Chung-Ting Tsai
+                </a>
+                <sup>1</sup>
+                ,
+              </span>
+
+              <span class="author-block">
+                <a href="https://scholar.google.com.tw/citations?user=rU7n-9YAAAAJ" target="_blank">
+                Yung-Hsuan Lai</a>
+                <sup>1</sup>
+                ,
+              </span>
+
+              <span class="author-block">
+                <a href="https://fuenyang1127.github.io/" target="_blank">
+                Fu-En Yang</a>
+                <sup>2</sup>
+                ,
+              </span>
+
+              <span class="author-block">
+                <a href="https://vllab.ee.ntu.edu.tw/ycwang.html" target="_blank">
+                Yu-Chiang Frank Wang
+                </a>
+                <sup>2</sup>
+                ,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <sup>1</sup>
+                National Taiwan University,
+                <sup>2</sup>
+                NVIDIA
+                <br>
+                ECCV 2024
+              </span>
+
+              <span class="eql-cntrb">
+                <small>
+                  <br><sup>*</sup>Indicates Equal Contribution
+                </small>
+              </span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2311.17717" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://jasper0314-huang.github.io/receler-concept-erasing/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Comming Soon)</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2311.17717" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="text-align: center;">
+      <img src="static/images/teaser.png" alt="Reliable Concept Erasing (Receler)" class="center-image" style="max-width: 90%; height: auto;">
+      <div class="text-container" style="display: inline-block; max-width: 90%; text-align: center;">
+        <h2 class="subtitle has-text-centered">
+          We propose <b>Receler</b>, a reliable concept erasing method that disables pre-trained diffusion models from generating images related to a target concept. Compared to previous methods, Receler is robust against paraphrased or adversarial prompts (i.e., Robustness) and does not affect the generation of non-target concepts (i.e., Locality).
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Concept erasure in text-to-image diffusion models aims to disable pre-trained diffusion models from generating images related to a target concept. To perform reliable concept erasure, the properties of robustness and locality are desirable. The former refrains the model from producing images associated with the target concept for any paraphrased or learned prompts, while the latter preserves its ability in generating images with non-target concepts. In this paper, we propose <b>Re</b>liable <b>C</b>oncept <b>E</b>rasing via <b>L</b>ightweight <b>Er</b>asers (<b>Receler</b>). It learns a lightweight Eraser to perform concept erasing while satisfying the above desirable properties through the proposed concept-localized regularization and adversarial prompt learning scheme. Experiments with various concepts verify the superiority of Receler over previous methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+          <img src="static/images/comparison.png" alt="Qualitative comparison of concept erasure methods" class="center-image" style="max-width: 80%; height: auto; margin-bottom: 20px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 80%; height: auto;">
+            <b>Qualitative comparison of concept erasure methods.</b> Note that erased concepts are listed at the top, and images generated from each method are shown in each row.
+          </h2>
+        </div>
+        <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+          <img src="static/images/cifar10.png" alt="Receler with CIFAR-10 paraphrased prompts " class="center-image" style="max-width: 60%; height: auto; margin-bottom: 20px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 60%; height: auto;">
+            <b>Receler with CIFAR-10 paraphrased prompts.</b> The diagonal orange boxes show robustness against paraphrased prompts, while the non-diagonal boxes demonstrate locality by closely matching images from the original diffusion model (leftmost column).
+          </h2>
+        </div>
+        <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+          <img src="static/images/adv_attack.png" alt="Erasure methods against learned attack prompts" class="center-image" style="max-width: 70%; height: auto; margin-bottom: 15px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 70%; height: auto;">
+            <b>Erasure methods against learned attack prompts.</b> We use Ring-A-Bell (ICLR'24) to generate adversarial prompts for nudity and violence concepts.
+          </h2>
+        </div>
+        <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
+          <img src="static/images/multi_concept.png" alt="Erase multiple concepts" class="center-image" style="max-width: 50%; height: auto; margin-bottom: 15px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 50%; height: auto;">
+            <b>Erase multiple concepts.</b> Without training an eraser for multiple concepts from scratch, we combine existing erasers for multi-concept erasure.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Method Overview -->
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3">Method Overview</h2>
+          <center>
+            <img src="static/images/method.png" alt="Method Overview" class="center-image blend-img-background">
+          </center>
+          <div class="level-set has-text-justified">
+            <p><strong>Receler consists of three key components:</strong></p>
+            <ul>
+              <li>
+                <strong>Lightweight Eraser:</strong> The Eraser \( E \), which is only 3.7% of the U-Net parameters, is integrated after each cross-attention layer. It directly removes the target concept from the visual latents, with the prediction \( o^l \) added to the layer outputs.
+              </li>
+              <li>
+                <strong>Adversarial Prompt Learning:</strong> To ensure robustness, Receler employs adversarial prompt embedding \( e_{\textit{Adv}} \), which is trained to recover previously erased visual concept, thereby imitating the malicious paraphrased or adversarial prompts.
+              </li>
+              <li>
+                <strong>Concept-localized Regularization:</strong> To achieve locality, Receler leverages the spatial information associated with
+              the target concept (i.e., Cross-Attention Map \( \tilde{M} \)) to regularize the eraser outputs for precise erasing without affecting the generation of non-target concepts.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method Overview -->
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{huang2023receler,
+    title={Receler: Reliable concept erasing of text-to-image diffusion models via lightweight erasers},
+    author={Huang, Chi-Pin and Chang, Kai-Po and Tsai, Chung-Ting and Lai, Yung-Hsuan and Yang, Fu-En and Wang, Yu-Chiang Frank},
+    journal={arXiv preprint arXiv:2311.17717},
+    year={2023}
+  }
+}</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
