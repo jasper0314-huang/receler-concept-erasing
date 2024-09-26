@@ -215,25 +215,23 @@
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
-          <img src="static/images/comparison.png" alt="Qualitative comparison of concept erasure methods" class="center-image" style="max-width: 80%; height: auto; margin-bottom: 20px;"/>
-          <h2 class="subtitle has-text-centered" style="max-width: 80%; height: auto;">
-            <b>Qualitative comparison of concept erasure methods.</b> Note that erased concepts are listed at the top, and images generated from each method are shown in each row.
+          <img src="static/images/comparison.png" alt="Qualitative comparison of concept erasure methods" class="center-image" style="max-width: 60%; height: auto; margin-bottom: 20px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 60%; height: auto;">
+            <b>Qualitative comparison of concept erasure methods.</b> Erased concepts are listed at the top, and images generated from each method are shown in each row.
           </h2>
         </div>
         <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
-          <img src="static/images/cifar10.png" alt="Receler with CIFAR-10 paraphrased prompts " class="center-image" style="max-width: 60%; height: auto; margin-bottom: 20px;"/>
-          <h2 class="subtitle has-text-centered" style="max-width: 60%; height: auto;">
+          <img src="static/images/cifar10.png" alt="Receler with CIFAR-10 paraphrased prompts " class="center-image" style="max-width: 40%; height: auto; margin-bottom: 20px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 50%; height: auto;">
             <b>Receler with CIFAR-10 paraphrased prompts.</b> The diagonal orange boxes show robustness against paraphrased prompts, while the non-diagonal boxes demonstrate locality by closely matching images from the original diffusion model (leftmost column).
           </h2>
         </div>
         <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
-          <img src="static/images/adv_attack.png" alt="Erasure methods against learned attack prompts" class="center-image" style="max-width: 70%; height: auto; margin-bottom: 15px;"/>
-          <h2 class="subtitle has-text-centered" style="max-width: 70%; height: auto;">
-            <b>Erasure methods against learned attack prompts.</b> We use Ring-A-Bell (ICLR'24) to generate adversarial prompts for nudity and violence concepts.
+          <img src="static/images/adv_attack.png" alt="Erasure methods against learned attack prompts" class="center-image" style="max-width: 45%; height: auto; margin-bottom: 15px;"/>
+          <h2 class="subtitle has-text-centered" style="max-width: 50%; height: auto;">
+            <b>Erasure methods against learned attack prompts.</b> We evaluate on adversarial prompts from ICLR'24 Ring-A-Bell.
           </h2>
-        </div>
-        <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
-          <img src="static/images/multi_concept.png" alt="Erase multiple concepts" class="center-image" style="max-width: 50%; height: auto; margin-bottom: 15px;"/>
+          <img src="static/images/multi_concept.png" alt="Erase multiple concepts" class="center-image" style="max-width: 25%; height: auto; margin-bottom: 15px;"/>
           <h2 class="subtitle has-text-centered" style="max-width: 50%; height: auto;">
             <b>Erase multiple concepts.</b> Without training an eraser for multiple concepts from scratch, we combine existing erasers for multi-concept erasure.
           </h2>
