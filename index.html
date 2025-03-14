@@ -209,10 +209,44 @@
 <!-- End paper abstract -->
 
 
+<!-- Method Overview -->
+<section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered" style="margin-bottom: 36px;">Method Overview</h2>
+          <center>
+            <img src="static/images/method.png" alt="Method Overview" class="center-image blend-img-background">
+          </center>
+          <div class="level-set has-text-justified">
+            <p><strong>Receler consists of three key components:</strong></p>
+            <ul>
+              <li>
+                <strong>Lightweight Eraser:</strong> The Eraser \( E \), which is only 3.7% of the U-Net parameters, is integrated after each cross-attention layer. It directly removes the target concept from the visual latents, with the prediction \( o^l \) added to the layer outputs.
+              </li>
+              <li>
+                <strong>Adversarial Prompt Learning:</strong> To ensure robustness, Receler employs adversarial prompt embedding \( e_{\textit{Adv}} \), which is trained to recover previously erased visual concept, thereby imitating the malicious paraphrased or adversarial prompts.
+              </li>
+              <li>
+                <strong>Concept-localized Regularization:</strong> To achieve locality, Receler leverages the spatial information associated with
+              the target concept (i.e., Cross-Attention Map \( \tilde{M} \)) to regularize the eraser outputs for precise erasing without affecting the generation of non-target concepts.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method Overview -->
+
+
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom: -16px;">Qualitative Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; height: 100%;">
           <img src="static/images/comparison.png" alt="Qualitative comparison of concept erasure methods" class="center-image" style="max-width: 60%; height: auto; margin-bottom: 20px;"/>
@@ -241,39 +275,6 @@
   </div>
 </section>
 <!-- End image carousel -->
-
-
-<!-- Method Overview -->
-<section class="section hero is-small is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-full">
-        <div class="content">
-          <h2 class="title is-3">Method Overview</h2>
-          <center>
-            <img src="static/images/method.png" alt="Method Overview" class="center-image blend-img-background">
-          </center>
-          <div class="level-set has-text-justified">
-            <p><strong>Receler consists of three key components:</strong></p>
-            <ul>
-              <li>
-                <strong>Lightweight Eraser:</strong> The Eraser \( E \), which is only 3.7% of the U-Net parameters, is integrated after each cross-attention layer. It directly removes the target concept from the visual latents, with the prediction \( o^l \) added to the layer outputs.
-              </li>
-              <li>
-                <strong>Adversarial Prompt Learning:</strong> To ensure robustness, Receler employs adversarial prompt embedding \( e_{\textit{Adv}} \), which is trained to recover previously erased visual concept, thereby imitating the malicious paraphrased or adversarial prompts.
-              </li>
-              <li>
-                <strong>Concept-localized Regularization:</strong> To achieve locality, Receler leverages the spatial information associated with
-              the target concept (i.e., Cross-Attention Map \( \tilde{M} \)) to regularize the eraser outputs for precise erasing without affecting the generation of non-target concepts.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Method Overview -->
 
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
